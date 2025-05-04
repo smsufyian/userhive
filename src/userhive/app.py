@@ -1,3 +1,5 @@
+"""FastAPI application for UserHive API."""
+
 from fastapi import FastAPI
 
 app = FastAPI(title="UserHive API")
@@ -5,9 +7,13 @@ app = FastAPI(title="UserHive API")
 
 @app.get("/")
 async def hello_world():
-    """
-    Returns a simple hello world message.
-    """
+    """Return a simple hello world message."""
+    return {"message": "helloworld"}
+
+
+@app.get("/hello")
+async def hello():
+    """Return a simple hello world message."""
     return {"message": "helloworld"}
 
 
